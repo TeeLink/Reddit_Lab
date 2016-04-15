@@ -17,5 +17,13 @@ namespace Reddit_Lab.Controllers
             return View(db.Posts.ToList());
         }
 
+        [HttpGet]
+        public ActionResult Details(int Id=0)
+        {
+            Post post = db.Posts.Find(Id);
+            return View(post);
+        }
+
+        
     }
 }
