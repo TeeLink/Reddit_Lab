@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Reddit_Lab.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+ 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpVote)
+        
+            @Html.DisplayFor(modelItem => item.DownVote)
+        
+            @Html.DisplayFor(modelItem => item.Title)
+        
+            @Html.DisplayFor(modelItem => item.Author)
+       
+            @*@Html.DisplayFor(modelItem => item.Link)*@
+       
+            @Html.DisplayFor(modelItem => item.Posted)
+        
+            @*@Html.DisplayFor(modelItem => item.Body)*@
+      
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+        </td>
+    </tr>
+}
+
+</table>
